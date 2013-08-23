@@ -14,8 +14,6 @@ CPointFractal.cpp \
 CPointFractalRenderer.cpp \
 CColorRange.cpp \
 CQUtil.cpp \
-CThread.cpp \
-pthread_rdwr.c \
 
 HEADERS += \
 CQMandelbrotTest.h \
@@ -26,8 +24,6 @@ CPointFractal.h \
 CPointFractalRenderer.h \
 CQUtil.h \
 CColorRange.h \
-CThread.h \
-pthread_rdwr.h \
 
 DESTDIR     = ../bin
 OBJECTS_DIR = ../obj
@@ -39,6 +35,9 @@ INCLUDEPATH += \
 ../../CMath/include \
 ../../CUtil/include \
 ../../COS/include \
+../../CThread/include \
 
 unix:LIBS += \
 -L$$LIB_DIR \
+-L../../CThread/lib \
+-lCThread
