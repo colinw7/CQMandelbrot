@@ -13,7 +13,6 @@ CMandelbrot.cpp \
 CPointFractal.cpp \
 CPointFractalRenderer.cpp \
 CColorRange.cpp \
-CQUtil.cpp \
 
 HEADERS += \
 CQMandelbrotTest.h \
@@ -22,7 +21,6 @@ CQPointFractal.h \
 CMandelbrot.h \
 CPointFractal.h \
 CPointFractalRenderer.h \
-CQUtil.h \
 CColorRange.h \
 
 DESTDIR     = ../bin
@@ -30,14 +28,28 @@ OBJECTS_DIR = ../obj
 LIB_DIR     = ../lib
 
 INCLUDEPATH += \
-../include \
-. \
-../../CMath/include \
-../../CUtil/include \
+. ../include \
+../../CQUtil/include \
+../../CFont/include \
+../../CImageLib/include \
+../../CFile/include \
 ../../COS/include \
+../../CUtil/include \
+../../CMath/include \
+../../CStrUtil/include \
 ../../CThread/include \
 
 unix:LIBS += \
 -L$$LIB_DIR \
+-L../../CQUtil/lib \
+-L../../CConfig/lib \
+-L../../CImageLib/lib \
+-L../../CFont/lib \
 -L../../CThread/lib \
--lCThread
+-L../../CFile/lib \
+-L../../COS/lib \
+-L../../CStrUtil/lib \
+-L../../CRegExp/lib \
+-lCQUtil -lCConfig -lCFont -lCImageLib \
+-lCThread -lCFile -lCStrUtil -lCOS -lCRegExp \
+-ljpeg -lpng -ltre
