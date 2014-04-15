@@ -1,5 +1,7 @@
 TEMPLATE = app
-TARGET = 
+
+TARGET = CQMandelbrot
+
 DEPENDPATH += .
 
 #CONFIG += debug
