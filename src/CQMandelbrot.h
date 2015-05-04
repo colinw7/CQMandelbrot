@@ -6,6 +6,8 @@
 class CMandelbrot;
 
 class CQMandelbrot : public CQPointFractal {
+  Q_OBJECT
+
  public:
   CQMandelbrot(QWidget *parent = 0);
 
