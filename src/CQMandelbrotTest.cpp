@@ -242,7 +242,7 @@ animateSlot()
 
   mandelbrot->setAngle(2*M_PI*a);
 
-  mandelbrot_->setRange(xc - s, yc - s, xc + s, yc + s);
+  mandelbrot_->setRange(QRect(xc - s, yc - s, 2*s, 2*s));
 
   ++t_;
 

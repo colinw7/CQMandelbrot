@@ -1,8 +1,14 @@
 TEMPLATE = app
 
+QT += widgets
+
 TARGET = CQMandelbrot
 
 DEPENDPATH += .
+
+QMAKE_CXXFLAGS += -std=c++11
+
+MOC_DIR = .moc
 
 #CONFIG += debug
 
@@ -10,20 +16,12 @@ DEPENDPATH += .
 SOURCES += \
 CQMandelbrotTest.cpp \
 CQMandelbrot.cpp \
-CQPointFractal.cpp \
 CMandelbrot.cpp \
-CPointFractal.cpp \
-CPointFractalRenderer.cpp \
-CColorRange.cpp \
 
 HEADERS += \
 CQMandelbrotTest.h \
 CQMandelbrot.h \
-CQPointFractal.h \
 CMandelbrot.h \
-CPointFractal.h \
-CPointFractalRenderer.h \
-CColorRange.h \
 
 DESTDIR     = ../bin
 OBJECTS_DIR = ../obj
@@ -31,6 +29,8 @@ LIB_DIR     = ../lib
 
 INCLUDEPATH += \
 . ../include \
+../../CFractal/qinclude \
+../../CFractal/include \
 ../../CQUtil/include \
 ../../CFont/include \
 ../../CImageLib/include \
@@ -43,15 +43,18 @@ INCLUDEPATH += \
 
 unix:LIBS += \
 -L$$LIB_DIR \
+-L../../CFractal/lib \
 -L../../CQUtil/lib \
 -L../../CConfig/lib \
 -L../../CImageLib/lib \
 -L../../CFont/lib \
 -L../../CThread/lib \
 -L../../CFile/lib \
+-L../../CFileUtil/lib \
 -L../../COS/lib \
+-L../../CUtil/lib \
 -L../../CStrUtil/lib \
 -L../../CRegExp/lib \
--lCQUtil -lCConfig -lCFont -lCImageLib \
--lCThread -lCFile -lCStrUtil -lCOS -lCRegExp \
+-lCQFractal -lCFractal -lCQUtil -lCConfig -lCFont -lCImageLib \
+-lCThread -lCFile -lCFileUtil -lCUtil -lCStrUtil -lCOS -lCRegExp \
 -ljpeg -lpng -ltre
