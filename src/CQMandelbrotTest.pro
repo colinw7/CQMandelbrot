@@ -44,6 +44,7 @@ INCLUDEPATH += \
 unix:LIBS += \
 -L$$LIB_DIR \
 -L../../CFractal/lib \
+-L../../CQColors/lib \
 -L../../CQUtil/lib \
 -L../../CConfig/lib \
 -L../../CImageLib/lib \
@@ -55,6 +56,6 @@ unix:LIBS += \
 -L../../CUtil/lib \
 -L../../CStrUtil/lib \
 -L../../CRegExp/lib \
--lCQFractal -lCFractal -lCQUtil -lCConfig -lCFont -lCImageLib \
+-lCQFractal -lCFractal -lCQColors -lCQUtil -lCConfig -lCFont -lCImageLib \
 -lCThread -lCFile -lCFileUtil -lCUtil -lCRegExp -lCStrUtil -lCOS \
--ljpeg -lpng -ltre
+-ljpeg -lpng -ltre -ltcl
