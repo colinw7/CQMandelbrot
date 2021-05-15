@@ -56,5 +56,5 @@ unix:LIBS += \
 -L../../CStrUtil/lib \
 -L../../CRegExp/lib \
 -lCQFractal -lCFractal -lCQUtil -lCConfig -lCFont -lCImageLib \
--lCThread -lCFile -lCFileUtil -lCUtil -lCStrUtil -lCOS -lCRegExp \
+-lCThread -lCFile -lCFileUtil -lCUtil -lCRegExp -lCStrUtil -lCOS \
 -ljpeg -lpng -ltre
