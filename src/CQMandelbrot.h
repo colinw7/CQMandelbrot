@@ -2,6 +2,7 @@
 #define CQMANDELBROT_H
 
 #include <CQPointFractal.h>
+#include <memory>
 
 class CMandelbrot;
 
@@ -9,14 +10,16 @@ class CQMandelbrot : public CQPointFractal {
   Q_OBJECT
 
  public:
-  CQMandelbrot(QWidget *parent = 0);
+  CQMandelbrot(QWidget *parent=nullptr);
 
   virtual ~CQMandelbrot();
 
-  CMandelbrot *getMandelbrot() const { return mandelbrot_; }
+  CMandelbrot *getMandelbrot() const { return mandelbrot_.get(); }
 
  private:
-  CMandelbrot *mandelbrot_;
+  using MandelbrotP = std::unique_ptr<CMandelbrot>;
+
+  MandelbrotP mandelbrot_;
 };
 
 #endif

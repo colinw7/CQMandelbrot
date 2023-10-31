@@ -5,13 +5,12 @@ CQMandelbrot::
 CQMandelbrot(QWidget *parent) :
  CQPointFractal(parent)
 {
-  mandelbrot_ = new CMandelbrot;
+  mandelbrot_ = std::make_unique<CMandelbrot>();
 
-  setFractal(mandelbrot_);
+  setFractal(getMandelbrot());
 }
 
 CQMandelbrot::
 ~CQMandelbrot()
 {
-  delete mandelbrot_;
 }
